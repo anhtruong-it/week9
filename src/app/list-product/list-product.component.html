@@ -1,0 +1,26 @@
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Units</th>
+    </tr>
+
+    <tr style="padding-top:20px;" *ngFor="let products of product" >
+      <td>{{products.id}}</td>
+      <td>{{products.name}}</td>
+      <td>{{products.description}}</td>
+      <td>{{products.price}}</td>
+      <td>{{products.units}}</td>
+      <td><span class="btn btn-primary" [routerLink]="['/update-product', products._id]"><i class="fa fa-edit"></i> Edit</span>
+          &nbsp; <span class="btn btn=primary" (click)="deleteproduct(products._id)"><i class="fa fa-trash"> Delete</i></span>
+          &nbsp;  <span class="btn btn-primary" (click)="getitems(products._id)"><i class="fa fa-edit"></i> Edit second</span>
+
+      </td>
+
+    </tr>
+  </table>
+  <span class="btn btn-primary" [routerLink]="['/add-product']">Add new product</span>
+</div>
